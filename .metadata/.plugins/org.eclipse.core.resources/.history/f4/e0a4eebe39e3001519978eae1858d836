@@ -30,8 +30,7 @@ public class PhoneDirectory {
 		output.close();
 		
 	}
-	
-//this lets you input a person's name and get their phone number
+//	
 	public String getNumber(String name) throws IOException{
 		
 		Properties my_prop = new Properties();
@@ -44,8 +43,7 @@ public class PhoneDirectory {
 		return get_info;
 		
 	}
-	
-//this changes the phone number of people	
+//	
 	public void changeEntry(String name, String number) throws IOException{
 		
 		Properties my_prop = new Properties();
