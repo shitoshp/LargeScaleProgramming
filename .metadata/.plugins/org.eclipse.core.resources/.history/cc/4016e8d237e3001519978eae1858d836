@@ -6,7 +6,7 @@ public class myDriver {
 		// TODO Auto-generated method stub
 		PhoneDirectory directory = new PhoneDirectory();
 		directory.getNumber("Shitosh1");      //adding to directory
-		directory.changeEntry("Shitosh1", "2027306684");  //change
+		
 	}
 
 }

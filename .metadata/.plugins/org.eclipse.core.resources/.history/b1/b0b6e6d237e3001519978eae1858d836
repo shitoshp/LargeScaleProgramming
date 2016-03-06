@@ -3,7 +3,7 @@ import java.util.*;
 
 public class PhoneDirectory {
 	
-	String get_info;      //to return getNumber(name)
+	String get_info;
 	
 	public void addEntry(String name, String number) throws IOException{
 		
@@ -44,19 +44,9 @@ public class PhoneDirectory {
 		
 	}
 //	
-	public void changeEntry(String name, String number) throws IOException{
-		
-		Properties my_prop = new Properties();
-		
-		InputStream input = new FileInputStream("src/main/resources/phone.properties");
-		my_prop.load(input);
-		my_prop.replace(name, number);
-		input.close();
-		
-		OutputStream output = new FileOutputStream("src/main/resources/phone.properties"); 
-		my_prop.store(output, null);
-		output.close();
-	}
+//	public void changeEntry(String name, String number){
+//		
+//	}
 //	
 }
 
