@@ -3,8 +3,6 @@ import java.util.*;
 
 public class PhoneDirectory {
 	
-	String get_info;
-	
 	public void addEntry(String name, String number) throws IOException{
 		
 		Properties my_prop = new Properties();
@@ -31,18 +29,9 @@ public class PhoneDirectory {
 		
 	}
 //	
-	public String getNumber(String name) throws IOException{
-		
-		Properties my_prop = new Properties();
-		InputStream input = new FileInputStream("src/main/resources/phone.properties");
-		my_prop.load(input);
-		get_info = my_prop.getProperty(name);
-		input.close();
-		
-		System.out.println(get_info);
-		return get_info;
-		
-	}
+//	public String getNumber(String name){
+//		
+//	}
 //	
 //	public void changeEntry(String name, String number){
 //		

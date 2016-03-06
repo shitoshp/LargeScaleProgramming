@@ -38,8 +38,6 @@ public class PhoneDirectory {
 		my_prop.load(input);
 		get_info = my_prop.getProperty(name);
 		input.close();
-		
-		System.out.println(get_info);
 		return get_info;
 		
 	}
