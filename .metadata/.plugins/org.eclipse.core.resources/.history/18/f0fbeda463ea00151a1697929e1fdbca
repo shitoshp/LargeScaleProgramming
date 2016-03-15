@@ -56,12 +56,12 @@ public class PhoneDirectory {
 		
 		Properties my_prop = new Properties();
 		
-		InputStream input = new FileInputStream(path);
+		InputStream input = new FileInputStream("src/main/resources/phone.properties");
 		my_prop.load(input);
 		my_prop.replace(name, number);
 		input.close();
 		
-		OutputStream output = new FileOutputStream(path); 
+		OutputStream output = new FileOutputStream("src/main/resources/phone.properties"); 
 		my_prop.store(output, null);
 		output.close();
 	}
