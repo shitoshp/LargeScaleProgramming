@@ -12,7 +12,9 @@ public class Polynomial {
 	}
 		
 	public String get_polynomialString(){
-		for (int i = 0; i < polynomial_list.size(); i++){
+		String term1 = polynomial_list.get(0).toString();
+		polynomialString += term1;
+		for (int i = 1; i < polynomial_list.size(); i++){
 			String term = polynomial_list.get(i).toString();
 			polynomialString += term;
 		}
@@ -21,7 +23,31 @@ public class Polynomial {
 	
 	public void insert(int x, int y){
 		Term insert_term = new Term(x, y);
-		polynomial_list.add(insert_term);
+		if (polynomial_list.isEmpty()) {
+			//System.out.println("IsEmpty");
+			polynomial_list.add(insert_term);
+		}
+		else{
+			//System.out.println(polynomial_list.size());
+			int size = polynomial_list.size();
+			boolean added = false;
+			for (int i = 0; i < size; i++){
+				
+				//System.out.println(i);
+				if (polynomial_list.get(i).getExponent() < insert_term.getExponent()){
+					polynomial_list.add((i), insert_term);
+					added = true;
+					break;
+				}
+				
+				
+			}
+			if (added == false){
+				polynomial_list.add(insert_term);
+				added = true;
+			}
+			
+		}
 	}
 	
 	public void delete(int x, int y){
