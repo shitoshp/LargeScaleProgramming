@@ -58,12 +58,12 @@ public class Polynomial {
 	public void delete(int x, int y){
 		//System.out.println("deleting term");
 		Term delete_term = new Term(x, y);
-		//System.out.println(polynomial_list.size());
+		System.out.println(polynomial_list.size());
 		for (int i = 0; i < polynomial_list.size(); i++){
-			//System.out.println("1deleting term");
+			System.out.println("1deleting term");
 			Term term = polynomial_list.get(i);
 			if (term.equals(delete_term)){
-				//System.out.println("deleting term");
+				System.out.println("deleting term");
 				polynomial_list.remove(term);
 			};
 		}
