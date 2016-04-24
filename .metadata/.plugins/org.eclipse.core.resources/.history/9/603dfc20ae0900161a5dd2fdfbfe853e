@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+public class Polynomial {
+	
+	private ArrayList<Term> polynomial_list;
+	private String polynomialString = "";
+	
+	public Polynomial(){
+		polynomial_list = new ArrayList();
+	}
+	
+	
+	
+
+	
+	public String get_polynomialString(){
+		for (int i = 0; i < polynomial_list.size(); i++){
+			String term = polynomial_list.get(i).toString();
+			polynomialString += term;
+		}
+		return polynomialString;
+	}
+	
+	public void insert(int x, int y){
+		Term insert_term = new Term(x, y);
+		polynomial_list.add(insert_term);
+	}
+	
+	public void delete(int x, int y){
+		Term delete_term = new Term(x, y);
+		//System.out.println(polynomial_list.size());
+
+		for (int i = 0; i < polynomial_list.size(); i++){
+			String term = polynomial_list.get(i).toString();
+			//System.out.println("looping array");
+			System.out.println(term);
+			System.out.println(delete_term);
+
+			if (term.equals(delete_term)){
+				System.out.println("deleting term");
+				polynomial_list.remove(delete_term);
+			};
+		}
+	}
+}

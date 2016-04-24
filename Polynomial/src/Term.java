@@ -10,9 +10,24 @@ public class Term {
 		this.exponent = exponent;
 	}
 	
+	public int getCoefficient(){
+		return coefficient;
+	}
+	
+	public int getExponent(){
+		return exponent;
+	}
+	
 	public String toString(){
 		//not refined
-		termString = String.valueOf(coefficient) + "x^" + String.valueOf(exponent);   
+		termString = String.valueOf(coefficient) + "x^" + String.valueOf(exponent) + " ";   
 		return termString;
+	}
+	
+	public boolean equals(Term compare_term){
+		if (compare_term == null) {return false;}
+		else if (compare_term == this) {return false;}
+		else if ((compare_term.exponent == this.exponent) && (compare_term.coefficient == this.coefficient)){return true;}
+		else {return false;}
 	}
 }

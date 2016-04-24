@@ -1,0 +1,25 @@
+
+public class Term {
+	
+	private int coefficient;
+	private int exponent;
+	private String termString;
+	
+	public Term(int coefficient, int exponent){
+		this.coefficient = coefficient;
+		this.exponent = exponent;
+	}
+	
+	public String toString(){
+		//not refined
+		termString = String.valueOf(coefficient) + "x^" + String.valueOf(exponent) + " ";   
+		return termString;
+	}
+	
+	public boolean equals(Term compare_term){
+		if (compare_term == null) {return false;}
+		else if (compare_term == this) {return false;}
+		else if ((compare_term.exponent == this.exponent) && (compare_term.coefficient == this.coefficient)){return true;}
+		else {return false;}
+	}
+}
