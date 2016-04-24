@@ -9,10 +9,9 @@ public class driver {
 		
 		filestream = new FileInputStream("Resources/polynomial.txt");
 		reader = new BufferedReader(new InputStreamReader(filestream));
-		int p = 0;
+		
 		String line = reader.readLine();
         while(line != null){
-        	
         	String[] array = line.split(";");
         	Polynomial poly_obj = new Polynomial();
         	for (int i = 1; i < array.length; i+=2){
@@ -21,14 +20,9 @@ public class driver {
         		poly_obj.insert(x, y);
         	}
         
-       
+        poly_obj.delete(5, 3);
 		String newpoly = poly_obj.get_polynomialString();
-		//System.out.println(p);
 		System.out.println(newpoly);
-		//System.out.println(poly_obj.product());
-		
-		p += 1;
-		
 		line = reader.readLine(); 
 //		Polynomial poly = new Polynomial();
 //		poly_obj.insert(2, 3);

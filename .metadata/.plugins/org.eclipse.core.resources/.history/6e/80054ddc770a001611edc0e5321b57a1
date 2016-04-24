@@ -21,7 +21,7 @@ public class driver {
         		poly_obj.insert(x, y);
         	}
         
-       
+        poly_obj.delete(5, 3);
 		String newpoly = poly_obj.get_polynomialString();
 		//System.out.println(p);
 		System.out.println(newpoly);

@@ -13,29 +13,14 @@ public class Polynomial {
 		
 	public String get_polynomialString(){
 		int sign;
-		sign = polynomial_list.get(0).getCoefficient();
-		String Polynomial_number;
-		
 		String term1 = polynomial_list.get(0).toString();
-		if (polynomial_list.get(0).getExponent() == 0){
-			polynomialString += polynomial_list.get(0).getCoefficient() + " ";}
-			
-		
+		polynomialString += term1;
 		for (int i = 1; i < polynomial_list.size(); i++){
 			String term = polynomial_list.get(i).toString();
 			sign = polynomial_list.get(i).getCoefficient();
-			if (polynomial_list.get(i).getExponent() == 0){
-				if (sign > 0){
-					polynomialString = polynomialString + "+" + polynomial_list.get(i).getCoefficient();
-				}
-				else {polynomialString += polynomial_list.get(i).getCoefficient();}
-				}
-			else if(polynomial_list.get(i).getExponent() == 1){
-				if (sign > 1) {polynomialString = polynomialString + "+" + polynomial_list.get(i).getCoefficient() + "x ";}
-				else {polynomialString += polynomial_list.get(i).getCoefficient() + "x ";}
-			}
+			if (polynomial_list.get(i).getExponent() == 0){polynomialString += polynomial_list.get(i).getCoefficient();}
 			else{
-				if (sign > 1) {polynomialString = polynomialString + "+" + term;}
+				if (sign > 0) {polynomialString = polynomialString + "+" + term;}
 				else {polynomialString += term;}
 			}
 		}
@@ -55,7 +40,7 @@ public class Polynomial {
 			for (int i = 0; i < size; i++){
 				
 				//System.out.println(i);
-				if (polynomial_list.get(i).getExponent() > insert_term.getExponent()){
+				if (polynomial_list.get(i).getExponent() < insert_term.getExponent()){
 					polynomial_list.add((i), insert_term);
 					added = true;
 					break;
@@ -75,7 +60,6 @@ public class Polynomial {
 	
 	public void delete(int x, int y){
 		//System.out.println("deleting term");
-		boolean removed = false;
 		Term delete_term = new Term(x, y);
 		//System.out.println(polynomial_list.size());
 		for (int i = 0; i < polynomial_list.size(); i++){
@@ -84,11 +68,7 @@ public class Polynomial {
 			if (term.equals(delete_term)){
 				//System.out.println("deleting term");
 				polynomial_list.remove(term);
-				removed = true;
 			};
-		if (removed == false){
-			System.out.println("Delete content not found.");
-		}
 		}
 	}
 	

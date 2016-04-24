@@ -18,7 +18,7 @@ public class Polynomial {
 		
 		String term1 = polynomial_list.get(0).toString();
 		if (polynomial_list.get(0).getExponent() == 0){
-			polynomialString += polynomial_list.get(0).getCoefficient() + " ";}
+			polynomialString += polynomial_list.get(0).getCoefficient();}
 			
 		
 		for (int i = 1; i < polynomial_list.size(); i++){
