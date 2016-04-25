@@ -14,20 +14,23 @@ public class driver {
         while(line != null){
         	
         	String[] array = line.split(";");
-        	Polynomial poly_obj = new Polynomial();
+        	Polynomial poly_obj = new Polynomial();           //creating object from polynomial class
         	for (int i = 1; i < array.length; i+=2){
         		int x = Integer.parseInt(array[i]);
         		int y = Integer.parseInt(array[i+1]);
         		poly_obj.insert(x, y);
         	}
         
-       
-		String newpoly = poly_obj.get_polynomialString();
-		//System.out.println(p);
-		System.out.println(newpoly);
-		//System.out.println(poly_obj.product());
+        poly_obj.reverse();                    //reverse
+		String print_poly = poly_obj.get_polynomialString();       //storing polynomial string in variable
+		System.out.print("P" + p + "(X) = ");  //polynomial number count
+		
+		System.out.println(print_poly);
+		//System.out.println(poly_obj.product());        //delete
 		
 		p += 1;
+		
+		poly_obj.reverse();
 		
 		line = reader.readLine(); 
 //		Polynomial poly = new Polynomial();
